@@ -1,9 +1,10 @@
 #!/bin/sh
-wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/llvm-project-10.0.1.tar.xz
-xz -d -k llvm-project-10.0.1.tar.xz
-tar xvf llvm-project-10.0.1.tar
-cp -rf clang/* llvm-project-10.0.1/clang/
-cd llvm-project-10.0.1
+VERSION=12.0.1
+#wget https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/llvm-project-${VERSION}.src.tar.xz
+#xz -d -k llvm-project-${VERSION}.src.tar.xz
+#tar xvf llvm-project-${VERSION}.src.tar.xz
+cp -rf clang/* llvm-project-${VERSION}.src/clang/
+cd llvm-project-${VERSION}.src
 mkdir build
 cd build
 cmake -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../llvm
